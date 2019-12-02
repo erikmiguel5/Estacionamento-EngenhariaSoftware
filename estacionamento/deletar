@@ -1,0 +1,16 @@
+<?php
+
+$numeroVaga = $_POST["numeroVaga"];
+
+    $data =  date("d", mktime(gmdate("d")));
+    $hora =  date("H", mktime(gmdate("H")-3));
+    echo $data;
+
+    include_once("conexao.php");
+  
+    $caulculo = "SELECT data FROM vaga WHERE numeroVaga = $numeroVaga ";
+
+    $saida ="INSERT INTO vaga(situacao,dataSaida,horaSaida,valorPagar) VALUES (2,$data,$hora,)";
+    $resultado = mysqli_query($conn, $saida);
+    header("Location: indexC.html"); 
+?>n
